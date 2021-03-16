@@ -5,3 +5,5 @@ A simple c# phishing for windows login screen
 - git clone https://github.com/krishpranav/windows-login
 - cd windows-login
 - sudo chmod +x *
+- debug the tool
+- made in visual studio
