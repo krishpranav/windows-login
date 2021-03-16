@@ -10,6 +10,20 @@ namespace FakeLogonScreen.Properties {
         
         private static global::System.Globalization.CulutreInfo resourceCulture;
 
-        
+        [global::System.Diagonostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+
+        internal Resources() {
+
+            [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+            internal static global::System.Resources.ResourceManager ResourceManager {
+                get {
+                    if (object.ReferenceEquals(resourceMain, null)) {
+                        global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("windows-login.Properties.Resources", typeof(Resource).Assembly);
+                        resourceMan = temp;
+                    }
+                    return resourceMan;
+                }
+            }
+        }
     }
 }
