@@ -7,3 +7,5 @@ A simple c# phishing for windows login screen
 - sudo chmod +x *
 - debug the tool
 - made in visual studio
+
+# Tool Author: krishpranav
