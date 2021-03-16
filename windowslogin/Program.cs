@@ -41,6 +41,35 @@ namespace windowslogin
                 s.Username = Environment.UserName;
                 s.Context = ContextType.Machine;
             }
+
+            //set background
+            string imagePath = GetImagePath(SID) ?? @"C:\Windows\Web\Screen\img100.jpg";
+            if (File.Exists(imagePath))
+                s.BackgroundImage = Image.FromFile(imagePath);
+            else
+                s.BackColor = Color.FromArgb(0, 90, 158);
+
+            //show
+            Application.Run(s);
         }
+
+        static string GetImagePath(string SID)
+        {
+            string foundImage = null;
+
+             try
+            {
+                // Open registry, if path exists
+                string regPath = string.Format(@"SOFTWARE\Microsoft\Windows\CurrentVersion\SystemProtectedUserData\{0}\AnyoneRead\LockScreen", SID);
+                RegistryKey regLockScreen = Registry.LocalMachine.OpenSubKey(regPath);
+                if (regLockScreen == null)
+                    return null;
+
+                // Obtain lock screen index
+                string imageOrder = (string)regLockScreen.GetValue(null);
+                int ord = (int)imageOrder[0];
+
+                
+            }
     }
 }
