@@ -69,6 +69,18 @@ namespace windowslogin
                 string imageOrder = (string)regLockScreen.GetValue(null);
                 int ord = (int)imageOrder[0];
 
+                if (ord > 78)
+                {
+
+                    string webScreenPath = @"C:\Windows\Web\Screen";
+                    List<string> webScreenFiles = new List<string>(Directory.GetFiles(webScreenPath, "img*"));
+                    string image = string.Format("img{0}", ord + 10 + (90 - ord) * 2);
+                    foundImage = (from name
+                                 in webScreenFiles
+                                 where name.StartsWith(string.Format(@"{0}\{1}", webScreenPath, image))
+                                 select name).SingleOrDefault();                    )
+                }
+                //Custom image is used
                 
             }
     }
